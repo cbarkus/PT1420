@@ -1,5 +1,7 @@
+var toDoList = [];
+
 function addToDo() {
-	var toDoList = [];
+
 	var list;
 	var tmpItem;
 	
