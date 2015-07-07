@@ -16,10 +16,17 @@
 		<div class="container">
 			<div Style="padding-top: 70px">
 				<div id="listform">
-					<input id="todonew" type="text"></input>
-					<button type="button" onclick="javascript:addToDo ()">Add</button>
+					<label class="input-group">
+						<input class="form-control" placeholder="Add new Task" id="todonew" type="text"></input>
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="button" onclick="javascript:addToDo ()">Add</button>
+						</span>
+					</label>
 				</div>
-				<div id="todolist"></div>
+				<!-- Todo stuff goes here -->
+				<div class="container">
+					<ul id="todolist" class="list-group"></ul>
+				</div>
 			</div>
 		</div>
 		
