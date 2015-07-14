@@ -15,7 +15,9 @@ function changeDisplay() {
 		list.innerHTML += '<li class="list-group-item">' + toDoList[i] + 
 		'<div class="btn-group-xs pull-right">' +
 		'<button class="btn btn-warning delete" onclick="javascript:removeToDo(' + i +')">' + 
-		'Delete</button>' +
+		'Delete</button>' + 
+		'<button class="btn btn-warinig edit" onclick="javascript:editToDo(' + i +')">' +
+		'Edit</button>' +
 		'</div>'
 		'</li>';
 	}	
@@ -27,15 +29,17 @@ function removeToDo(itemToRemove) {
 	for(var i=0;i<toDoList.length;i++) {
 		if( i !== itemToRemove) {
 			newList.push(toDoList[i]);
-			
-		}
 		
 	}
 	toDoList = newList;
 	changeDisplay();
 }
 
-
+function editToDo() {
+	for(var i=0;i,toDoList.length;i++) {
+		if( i !==)
+	}
+}
 function addToDo() {
 	var tmpItem;
 	var newToDo = document.getElementById("todonew");	tmpItem = newToDo.value;
@@ -45,7 +49,8 @@ function addToDo() {
 		return;
 		
 	}
-	
+}
+
 	toDoList.push(tmpItem);
 	//Call our display function
 	changeDisplay();
