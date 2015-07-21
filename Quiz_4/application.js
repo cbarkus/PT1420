@@ -4,6 +4,6 @@ function HelloWorld () {
 			document.write(finalmessage);
 			} else {
 			document.write("<p>Hello World</p>");
-			}
 		}
 	}
+}
