@@ -1,19 +1,15 @@
-function helloWorld () {
-	for(var i = 100; i >= 0; i=i-1) {
-		if (i === 0) {
-			document.write();
-			} else {
-			document.write("<p>Hello World</p>");
-		}
+function printHello () {
+	var content = document.getElementById("output");
+	content.innerHTML = "";
+	for(var i = 0; i<100; i++) {
+		content.innerHTML += "<div>Hello World</div>";
 	}
 }
 
-function goodByeWorld () {
-	for(var i = 100; i >= 0; i=i-1) {
-		if (i === 0) {
-			document.write();
-			} else {
-			document.write("<p>GoodBy World</p>");
-		}
+function printGoodBye () {
+	var content = document.getElementById("output");
+	content.innerHTML = "";
+	for(var i = 0; i<100; i++) {
+		content.innerHTML += "<div>Good Bye World</div>";
 	}
 }
