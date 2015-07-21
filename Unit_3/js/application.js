@@ -54,7 +54,6 @@ function removeToDo(itemToRemove) {
 function addToDo() {
 	var tmpItem;
 	var newToDo = document.getElementById("todonew");	tmpItem = newToDo.value;
-	
 	if(tmpItem === "") {
 		alert("You didn't put anything in to add");
 		return;
