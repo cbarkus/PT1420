@@ -6,7 +6,7 @@ canvas.height = window.innerHeight - 10;
 //This is the ball
 var pos = {x: 10, y: 10, vx: 10, vy: 10, sx: 10, sy: 10};
 //This is the paddle
-var pad = {x: (canvas.width / 2), y: (canvas.height / 2), sx: 20, sy: 1ß80};
+var pad = {x: (canvas.width / 2), y: (canvas.height / 2), sx: 20, sy: 80};
 var interval;
 
 
