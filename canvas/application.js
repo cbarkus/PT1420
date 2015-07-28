@@ -1,21 +1,30 @@
 var canvas = document.getElementById("board");
 var drawing = canvas.getContext("2d");
-//THis is the ball
-var pos = {x: 10, y: 10, vx: 15, vy: 15, sx: 10, sy: 10};
+canvas.width = window.innerWidth - 10;
+canvas.height = window.innerHeight - 10;
+
+//This is the ball
+var pos = {x: 10, y: 10, vx: 10, vy: 10, sx: 10, sy: 10};
+//This is the paddle
+var pad = {x: (canvas.width / 2), y: (canvas.height / 2), sx: 20, sy: 80};
 var interval;
 
-canvas.width = window.innerWidth - 20;
-canvas.height = window.innerHeight - 20;
+
 
 drawing.fillRect(pos.x, pos.y, pos.sx, pos.sy);
 
 function loop() {
 	drawing.clearRect(0,0,canvas.width, canvas.height);
-	//Adjust our postion by velocity of x
+	//Adjust our postion by velocity of x and y
 	pos.x = pos.x + pos.vx;
-	//Adjust our postion by velocity of y
 	pos.y = pos.y + pos.vy;
-	drawing.fillRect(pos.x, pos.y, pos.sx, pos.sy);
+	
+	if(pos.x >= canvas.width - 20) {pos.vx = pos.vx * -1; }
+	if(pos.y >= canvas.height - 20) {pos.vy = pos.vy * -1; }
+	if(pos.x <= 0) {pos.vx = pos.vx * -1; }
+	if(pos.y <= 0) {pos.vy = pos.vy * -1; }
+		
+	drawing.fillRect(pad.x, pad.y, pad.sx, pad.sy);	drawing.fillRect(pos.x, pos.y, pos.sx, pos.sy);
 }
 
-interval = setInterval(loop, 50);
+interval = setInterval(loop, 10);
