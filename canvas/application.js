@@ -1,9 +1,8 @@
-var canvas;
-
-canvas = document.getElementById("board");
+var canvas = document.getElementById("board");
 var drawing = canvas.getContext("2d");
+var pos = {x: 10, y: 10};
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-drawing.fillRect(10, 10, 100, 101)
+drawing.fillRect(pos.x, pos.y, 50, 50)
