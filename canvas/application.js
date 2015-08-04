@@ -6,12 +6,14 @@ canvas.height = window.innerHeight - 10;
 //This is the ball
 var pos = {x: 10, y: 10, vx: 10, vy: 10, sx: 10, sy: 10};
 //This is the paddle
-var pad = {x: (canvas.width / 2), y: (canvas.height / 2), sx: 20, sy: 80};
+var pad = {x: canvas.width * 0.85, y: (canvas.height / 2), sx: 20, sy: canvas.height / 5.6};
 var interval;
+var dist = canvas.height / 5;
 
 
 
 drawing.fillRect(pos.x, pos.y, pos.sx, pos.sy);
+
 
 function loop() {
 	drawing.clearRect(0,0,canvas.width, canvas.height);
@@ -33,6 +35,24 @@ function loop() {
 	if(pos.y <= 0) {pos.vy = pos.vy * -1; }
 		
 	drawing.fillRect(pad.x, pad.y, pad.sx, pad.sy);	drawing.fillRect(pos.x, pos.y, pos.sx, pos.sy);
+}
+
+document.onkeydown = function(e) {
+	
+	if(e.keyCode == 38) {
+		if(pad.y <= 0) {
+			return false;
+		}
+			pad.y = pad.y - dist;
+			return false;
+	} else if (e.keyCode == 40) {
+		if((pad.y + pad.sy) >= canvas.height) {
+			return false;
+		} 
+		pad.y = pad.y + dist;
+			return false;
+			
+		}
 }
 
 interval = setInterval(loop, 10);

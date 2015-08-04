@@ -5,3 +5,4 @@ function processForm () {
 	content = document.getElementById("output");	
 	content.innerText = "Hello " + name.value;
 }
+
